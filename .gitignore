@@ -1,0 +1,8 @@
+#python
+venv
+
+#c++
+build
+
+#visual studio
+.vscode
