@@ -6,6 +6,7 @@ enable_testing()
 
 find_package( OpenCV REQUIRED )
 include_directories( ${OpenCV_INCLUDE_DIRS} )
+set(CMAKE_CROSSCOMPILING true)
 
 add_executable(stitching main.cpp)
 
