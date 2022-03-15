@@ -10,6 +10,10 @@ with open("network/metadata/default.json", "r") as _file:
     port = defaults["PORT"]
     MNOQC = defaults["MNOQC"]
 
+with open("network/metadata/sender.json", "r") as _file:
+    reciver = json.load(_file)
+    HOST = reciver["HOST"]
+
 host = socket.gethostbyname(socket.gethostname())
 
 filename = "test/sample_4/1.jpg"
