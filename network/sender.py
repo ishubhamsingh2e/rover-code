@@ -12,7 +12,7 @@ with open("network/metadata/default.json", "r") as _file:
     HOST = defaults["HOST"]
 
 
-host = socket.gethostbyname(socket.gethostname())
+host = HOST
 
 filename = "test/sample_4/1.jpg"
 filesize = os.path.getsize(filename)
