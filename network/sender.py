@@ -9,10 +9,8 @@ with open("network/metadata/default.json", "r") as _file:
     BUFFER_SIZE = defaults["BUFFER_SIZE"]
     port = defaults["PORT"]
     MNOQC = defaults["MNOQC"]
+    HOST = defaults["HOST"]
 
-with open("network/metadata/sender.json", "r") as _file:
-    reciver = json.load(_file)
-    HOST = reciver["HOST"]
 
 host = socket.gethostbyname(socket.gethostname())
 

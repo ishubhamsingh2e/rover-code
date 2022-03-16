@@ -9,10 +9,7 @@ with open("network/metadata/default.json", "r") as _fileDefault:
     BUFFER_SIZE = defaults["BUFFER_SIZE"]
     PORT = defaults["PORT"]
     MNOQC = defaults["MNOQC"]
-
-with open("network/metadata/reciver.json", "r") as _fileReceiver:
-    reciver = json.load(_fileReceiver)
-    SERVER_HOST = reciver["SERVER_HOST"]
+    SERVER_HOST = defaults["SERVER_HOST"]
 
 sock = socket.socket()
 
