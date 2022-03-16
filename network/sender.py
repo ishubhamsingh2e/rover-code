@@ -2,6 +2,7 @@ import socket
 import tqdm
 import json
 import os
+import sys
 
 with open("network/metadata/default.json", "r") as _file:
     defaults = json.load(_file)
@@ -12,9 +13,9 @@ with open("network/metadata/default.json", "r") as _file:
     HOST = defaults["HOST"]
 
 
-host = HOST
+host = socket.gethostbyname(socket.gethostname())
 
-filename = "test/sample_4/1.jpg"
+filename = sys.argv[1]
 filesize = os.path.getsize(filename)
 
 sock = socket.socket()
