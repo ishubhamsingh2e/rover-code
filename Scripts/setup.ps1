@@ -23,6 +23,12 @@ if($ready -eq 'y')
 {
     $activate_Env = "./$venv/bin/activate.ps1"
     & $activate_Env
+    if( Test-Path env:VIRTUAL_ENV)
+    {
+        Write-Host 'Installing requirements.txt'
+        pip install -r requirements.txt
+        
+    }
 }
 elseif ($ready -eq 'n') 
 {
