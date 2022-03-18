@@ -8,12 +8,11 @@ if( Test-Path env:VIRTUAL_ENV)
     Exit
  }
 }
-$set_env = Read-Host 'Do you want to Create virtual env? y/n :'
+$set_env = Read-Host 'Do you want to Create a new virtual env? y/n :'
 if($set_env -eq 'y')
 {
-    $env = Read-Host'Name your virtual enviorment: '
-    $down_env = virtualenv $env
-    & $down_env 
+    $env = Read-Host 'Name your virtual enviorment: '
+    virtualenv $env 
 }
 Write-Host 'Activating your virtual enviorment'
 $venv = Read-Host 'Enter your virtual enviorment name: '
@@ -21,7 +20,8 @@ $ready = Read-Host 'Do you want to activate virtual enviorment? y/n :'
 
 if($ready -eq 'y')
 {
-    $activate_Env = "./$venv/bin/activate.ps1"
+    $getfile= Get-ChildItem | Where-Object {$_.Name -match "$venv"}
+    $activate_Env = "$getfile/bin/activate.ps1"
     & $activate_Env
     if( Test-Path env:VIRTUAL_ENV)
     {
